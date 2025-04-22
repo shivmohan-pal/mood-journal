@@ -1,10 +1,11 @@
 import './App.css'
+import AddMood from './components/addMood/AddMood'
 
 function App() {
 
   return (
     <>
-     <div className='bg-amber-500'>hello mood journal</div>
+    <AddMood />
     </>
   )
 }
