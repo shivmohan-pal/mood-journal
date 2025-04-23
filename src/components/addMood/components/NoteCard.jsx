@@ -24,7 +24,7 @@ const NoteCard = ({ data }) => {
       ></span>
       <div className="flex-auto flex flex-col gap-1 h-full">
         <div className="flex flex-auto justify-between">
-          <p className="text-black text-wrap">{text}</p>
+          <p className="text-black text-wrap text-sm">{text}</p>
           <p className="text-xs text-gray-400 text-nowrap">{timeString}</p>
         </div>
         <div className="flex justify-between text-sm text-gray-500">
