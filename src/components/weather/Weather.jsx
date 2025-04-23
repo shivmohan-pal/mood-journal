@@ -2,9 +2,8 @@ import { KtoC } from "../../utils/calculation";
 import { weatherIcon } from "../../utils/fetching";
 
 const Weather = ({ data }) => {
-  console.log(data);
   const { cod } = data;
-  if (cod != 200) return <span>location not found</span>;
+  if (cod && cod != 200) return <span>location not found</span>;
   const { main, weather } = data;
   return (
     <div className="flex gap-1 items-center">

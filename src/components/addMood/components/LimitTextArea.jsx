@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const LimitTextArea = ({ limit }) => {
+const LimitTextArea = ({ limit ,onChange}) => {
   const [text, setText] = useState("");
   const handleChange = (e) => {
     const { value } = e.target;
@@ -8,6 +8,9 @@ const LimitTextArea = ({ limit }) => {
       setText(value);
     }
   };
+  useEffect(()=>{
+    onChange(text);
+  },[text])
   return (
     <div className="relative">
       <textarea

@@ -17,7 +17,7 @@ export const unshiftToJSONItem = (itemName, newValue) => {
   }
 
   const stringValue = JSON.stringify(jsonData);
-  localItem.setItem(itemName, stringValue);
+  localStorage.setItem(itemName, stringValue);
 
   return true;
 };
