@@ -1,7 +1,5 @@
-// src/context/ThemeContext.jsx
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const themes = ['light', 'dark', 'ocean', 'forest', 'sunset'];
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
@@ -11,13 +9,9 @@ export const ThemeProvider = ({ children }) => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const cycleTheme = () => {
-    const next = (themes.indexOf(theme) + 1) % themes.length;
-    setTheme(themes[next]);
-  };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, cycleTheme, themes }}>
+    <ThemeContext.Provider value={{ theme, setTheme}}>
       {children}
     </ThemeContext.Provider>
   );
