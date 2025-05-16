@@ -19,7 +19,7 @@ const Calender = () => {
     if (cal.month > 0) {
       setCal((cal) => ({ ...cal, month: cal.month - 1 }));
     } else {
-      setCal((cal) => ({ month: 11, year: cal.year - 1 }));
+      setCal((cal) => ({...cal, month: 11, year: cal.year - 1 }));
     }
   };
 
@@ -27,7 +27,7 @@ const Calender = () => {
     if (cal.month < 11) {
       setCal((cal) => ({ ...cal, month: cal.month + 1 }));
     } else {
-      setCal((cal) => ({ month: 0, year: cal.year + 1 }));
+      setCal((cal) => ({...cal, month: 0, year: cal.year + 1 }));
     }
   };
 
@@ -43,7 +43,8 @@ const Calender = () => {
             {"<"}
           </button>
           <div className="flex gap-1">
-            <span>{months[cal.month]}</span>
+            <span className="font-medium">{months[cal.month]}</span>
+            <span>&minus;</span>
             <span>{cal.year}</span>
           </div>
           <button className="border-1 p-1" onClick={nextMonth}>
@@ -66,7 +67,7 @@ const Calender = () => {
               className={`${
                 elm == "x" ? "invisible" : "visible"
               } flex w-10 h-10 border-1 items-center justify-center justify-self-center rounded-md ${
-                elm == cal.today ? "bg-gray-400" : "bg-white"
+                (elm == date.getDate() && (date.getMonth()==cal.month && date.getFullYear()==cal.year)) ? "bg-gray-400" : "bg-white"
               } hover:bg-gray-300`}
               key={i}
             >
