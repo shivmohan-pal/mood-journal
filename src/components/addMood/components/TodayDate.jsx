@@ -5,7 +5,7 @@ const TodayDate = () => {
     month: "long",
     day: "numeric",
   });
-  return <p className="text-4xl">{formatted}</p>;
+  return <p className="text-3xl md:text-4xl">{formatted}</p>;
 };
 
 export default TodayDate;

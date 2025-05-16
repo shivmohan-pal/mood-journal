@@ -17,21 +17,21 @@ const NoteCard = ({ data }) => {
   });
 
   return (
-    <div className="w-66 rounded-xl border-2 p-1 items-start flex gap-2">
+    <div className="sm:min-w-1/3 rounded-xl border-2 p-1 pr-2 items-start flex gap-2">
       <span
-        className="text-3xl"
+        className="text-4xl sm:text-5xl md:text-6xl"
         dangerouslySetInnerHTML={{ __html: emoji.icon }}
-      ></span>
+      />
       <div className="flex-auto flex flex-col gap-1 h-full">
         <div className="flex flex-auto justify-between">
-          <p className="text-black text-wrap text-sm">{text}</p>
-          <p className="text-xs text-gray-400 text-nowrap">{timeString}</p>
+          <p className="text-black text-wrap font-medium sm:text-lg md:text-xl lg:text-2xl">{text}</p>
+          <p className="text-xs text-gray-400 text-nowrap pt-0.5">{timeString}</p>
         </div>
-        <div className="flex justify-between text-sm text-gray-500">
+        <div className="flex justify-between items-end text-sm text-gray-500">
           <span>{dateString}</span>
           {weather && (
-            <div className="flex gap-1 items-center">
-              <span className="relative w-6">
+            <div className="flex gap-1 items-end">
+              <span className="relative w-5 sm:w-6 md:w-7 lg:w-8">
                 <img
                   className="w-full h-full object-contain"
                   src={weatherIcon(weather[0].icon)}
